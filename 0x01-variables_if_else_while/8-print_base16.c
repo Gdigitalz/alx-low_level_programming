@@ -1,21 +1,18 @@
 #include <stdio.h>
 
 /**
- *main - Entry point
- *Description - Printing base 16 numbers
- *Return:0
- */
+* main - Entry point
+*
+* Return: Always 0
+*/
 int main(void)
 {
-    int i, y;
-    for (i = 0; i < 10; i++)
-	{
-	     putchar (i + '0');
-	}
-           for (y = 'a'; y <= 'f'; y++)
-               {
-	           putchar (y);
-               }
-        putchar('\n');
-        return (0);
+int num;
+char letter;
+for (num = 0; num < 10; num++)
+putchar((num % 10) + '0');
+for (letter = 'a'; letter <= 'f'; letter++)
+putchar(letter);
+putchar('\n');
+return (0);
 }
