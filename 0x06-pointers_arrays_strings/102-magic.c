@@ -1,23 +1,44 @@
-#include <stdio.h>
+#include "main.h"
 
-int main(void)
+/**
+ * times_table - prints tables
+ * Return: void
+ */
+void times_table(void)
 {
-int n;
-int a[5];
-int *p;
+	int a = 0;
+	int b;
+	int rep;
 
-a[2] = 1024;
-p = &n;
- /*
-  * write your line of code here...
-  * Remember:
-  * - you are not allowed to use a
-  * - you are not allowed to modify p
-  * - only one statement
-  * - you are not allowed to code anything else than this line of code
-  */
-p[5] = 98;
- /* ...so that this prints 98\n */
-printf("a[2] = %d\n", a[2]);
-return (0);
+	while (a <= 9)
+	{
+		b = 0;
+		while (b <= 9)
+		{
+			rep = a * b;
+			if (b == 0)
+			{
+				_putchar('0' + rep);
+			}
+			else if (rep < 10)
+			{
+				_putchar(' ');
+				_putchar('0' + rep);
+			}
+			else
+			{
+				_putchar('0' + rep / 10);
+				_putchar('0' + rep % 10);
+			}
+
+			if (b < 9)
+			{
+				_putchar(',');
+				_putchar(' ');
+			}
+			b++;
+		}
+		_putchar('\n');
+		a++;
+	}
 }
